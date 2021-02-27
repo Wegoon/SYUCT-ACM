@@ -13,7 +13,9 @@
 <h1><a id="_1"></a>题解目录</h1>
 <ul>
 <li><a href="#link1">G题：Police Recruits</a></li>
-<li><a href="#link2">H题：Pashmak and Flowers</a><br>
+<li><a href="#link2">H题：Pashmak and Flowers</a></li>
+<li><a href="#link3">K题：Three swimmers</a></li>
+<li><a href="#link4">L题：Arena</a><br>
 <br><br><br><br></li>
 </ul>
 <p><span id="link1"></span><br>
@@ -21,43 +23,43 @@
 <blockquote>
 <p>知识点：简单贪心+简单模拟</p>
 </blockquote>
-<h2><a id="_11"></a>题面大意：</h2>
+<h2><a id="_13"></a>题面大意：</h2>
 <p>  你们城市的警察局刚刚成立。起初，他们没有任何人力。于是，他们开始集体招聘新人。<br>
   与此同时，犯罪在城市里不断发生。一名警察一生只能调查一宗犯罪。<br>
   如果在犯罪发生期间没有空闲的警察（目前所有警察都调查了其它犯罪），这项犯罪将不会被处理。<br>
   根据犯罪发生和招聘的时间顺序，找出未处理的犯罪数量。</p>
-<h2><a id="_16"></a>输入：</h2>
+<h2><a id="_18"></a>输入：</h2>
 <p>第一行包含一个整数<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo stretchy="false">(</mo><mn>1</mn><mo>≤</mo><mi>n</mi><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">n(1≤n≤10^{5})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 1em; vertical-align: -0.25em;"></span><span class="mord mathdefault">n</span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.77194em; vertical-align: -0.13597em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 1.06411em; vertical-align: -0.25em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.814108em;"><span class="" style="top: -3.063em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span>，表示事件数。<br>
 第二行包含<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.43056em; vertical-align: 0em;"></span><span class="mord mathdefault">n</span></span></span></span></span>个由空格分隔的整数：</p>
 <ul>
 <li>如果整数为<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.72777em; vertical-align: -0.08333em;"></span><span class="mord">−</span><span class="mord">1</span></span></span></span></span>，则表示发生了犯罪。</li>
 <li>否则，整数将为正，即表示当时招募的警察人数。一次最多招募<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>10</mn></mrow><annotation encoding="application/x-tex">10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.64444em; vertical-align: 0em;"></span><span class="mord">1</span><span class="mord">0</span></span></span></span></span>名警察。</li>
 </ul>
-<h2><a id="_21"></a>输出：</h2>
+<h2><a id="_23"></a>输出：</h2>
 <p>输出一个整数，表示未处理的犯罪数量。</p>
-<h2><a id="_24"></a>样例：</h2>
-<h5><a id="1_25"></a>输入1：</h5>
+<h2><a id="_26"></a>样例：</h2>
+<h5><a id="1_27"></a>输入1：</h5>
 <pre><code>3
 -1 -1 1
 </code></pre>
-<h5><a id="1_30"></a>输出1：</h5>
+<h5><a id="1_32"></a>输出1：</h5>
 <pre><code>2
 </code></pre>
-<h5><a id="2_34"></a>输入2：</h5>
+<h5><a id="2_36"></a>输入2：</h5>
 <pre><code>8
 1 -1 1 -1 -1 1 1 1
 </code></pre>
-<h5><a id="2_39"></a>输出2：</h5>
+<h5><a id="2_41"></a>输出2：</h5>
 <pre><code>1
 </code></pre>
-<h5><a id="3_43"></a>输入3：</h5>
+<h5><a id="3_45"></a>输入3：</h5>
 <pre><code>11
 -1 -1 2 -1 -1 -1 -1 -1 -1 -1 -1
 </code></pre>
-<h5><a id="3_48"></a>输出3：</h5>
+<h5><a id="3_50"></a>输出3：</h5>
 <pre><code>8
 </code></pre>
-<h2><a id="_52"></a>第二个样例解释：</h2>
+<h2><a id="_54"></a>第二个样例解释：</h2>
 <ul>
 <li>首先雇佣了一个人。</li>
 <li>犯罪出现了，最后一个雇佣的人将调查这起犯罪。</li>
@@ -69,7 +71,7 @@
 <li>又雇了一个人。</li>
 </ul>
 <p>答案是<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.64444em; vertical-align: 0em;"></span><span class="mord">1</span></span></span></span></span>，因为一项犯罪（第5步）得不到处理。</p>
-<h2><a id="_64"></a>题解：</h2>
+<h2><a id="_66"></a>题解：</h2>
 <p>我看最近大家最近做题情况不是特别好，不知道是因为其他学长学姐出的题比较难，还是你们放松了，当然我希望不是后者，所以找了一道简单题~</p>
 <p>这是一道简单的贪心、模拟题：</p>
 <p>贪心：警察很珍贵的（一名警察一生只能调查一宗犯罪），当我们有警察的时候一定要省着用着（每项犯罪最多安排一名警察去处理，安排多了岂不浪费~~~）</p>
@@ -93,7 +95,7 @@
 <li>当前没有空闲警察且发生了一起犯罪</li>
 <li>其它情况</li>
 </ol>
-<h2><a id="_82"></a>参考代码：</h2>
+<h2><a id="_84"></a>参考代码：</h2>
 <pre><code class="prism language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -119,39 +121,39 @@
 <blockquote>
 <p>知识点：简单模拟。如果要想把它做难，那就还有一些算法函数~</p>
 </blockquote>
-<h2><a id="_110"></a>题面大意：</h2>
+<h2><a id="_112"></a>题面大意：</h2>
 <p><span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mi>a</mi><mi>s</mi><mi>h</mi><mi>m</mi><mi>a</mi><mi>k</mi></mrow><annotation encoding="application/x-tex">Pashmak</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.69444em; vertical-align: 0em;"></span><span class="mord mathdefault" style="margin-right: 0.13889em;">P</span><span class="mord mathdefault">a</span><span class="mord mathdefault">s</span><span class="mord mathdefault">h</span><span class="mord mathdefault">m</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right: 0.03148em;">k</span></span></span></span></span>想给<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mi>a</mi><mi>r</mi><mi>m</mi><mi>i</mi><mi>d</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">Parmida</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.69444em; vertical-align: 0em;"></span><span class="mord mathdefault" style="margin-right: 0.13889em;">P</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right: 0.02778em;">r</span><span class="mord mathdefault">m</span><span class="mord mathdefault">i</span><span class="mord mathdefault">d</span><span class="mord mathdefault">a</span></span></span></span></span>送<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.64444em; vertical-align: 0em;"></span><span class="mord">2</span></span></span></span></span>朵，<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mi>a</mi><mi>r</mi><mi>m</mi><mi>i</mi><mi>d</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">Parmida</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.69444em; vertical-align: 0em;"></span><span class="mord mathdefault" style="margin-right: 0.13889em;">P</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right: 0.02778em;">r</span><span class="mord mathdefault">m</span><span class="mord mathdefault">i</span><span class="mord mathdefault">d</span><span class="mord mathdefault">a</span></span></span></span></span>想拥有<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.64444em; vertical-align: 0em;"></span><span class="mord">2</span></span></span></span></span>朵美丽值相差最大的花。<br>
 求：<br>
 3. <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mi>a</mi><mi>s</mi><mi>h</mi><mi>m</mi><mi>a</mi><mi>k</mi></mrow><annotation encoding="application/x-tex">Pashmak</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.69444em; vertical-align: 0em;"></span><span class="mord mathdefault" style="margin-right: 0.13889em;">P</span><span class="mord mathdefault">a</span><span class="mord mathdefault">s</span><span class="mord mathdefault">h</span><span class="mord mathdefault">m</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right: 0.03148em;">k</span></span></span></span></span>送给<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mi>a</mi><mi>r</mi><mi>m</mi><mi>i</mi><mi>d</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">Parmida</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.69444em; vertical-align: 0em;"></span><span class="mord mathdefault" style="margin-right: 0.13889em;">P</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right: 0.02778em;">r</span><span class="mord mathdefault">m</span><span class="mord mathdefault">i</span><span class="mord mathdefault">d</span><span class="mord mathdefault">a</span></span></span></span></span>的<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.64444em; vertical-align: 0em;"></span><span class="mord">2</span></span></span></span></span>朵花的美丽值最大之差是多少<br>
 4. <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mi>a</mi><mi>s</mi><mi>h</mi><mi>m</mi><mi>a</mi><mi>k</mi></mrow><annotation encoding="application/x-tex">Pashmak</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.69444em; vertical-align: 0em;"></span><span class="mord mathdefault" style="margin-right: 0.13889em;">P</span><span class="mord mathdefault">a</span><span class="mord mathdefault">s</span><span class="mord mathdefault">h</span><span class="mord mathdefault">m</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right: 0.03148em;">k</span></span></span></span></span>有多少种送花方案</p>
-<h2><a id="_115"></a>输入：</h2>
+<h2><a id="_117"></a>输入：</h2>
 <p>第一行包含一个正整数<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo stretchy="false">(</mo><mn>2</mn><mo>≤</mo><mi>n</mi><mo>≤</mo><mn>2</mn><mo>∗</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">n(2≤n≤2*10^{5})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 1em; vertical-align: -0.25em;"></span><span class="mord mathdefault">n</span><span class="mopen">(</span><span class="mord">2</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.77194em; vertical-align: -0.13597em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.64444em; vertical-align: 0em;"></span><span class="mord">2</span><span class="mspace" style="margin-right: 0.222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right: 0.222222em;"></span></span><span class="base"><span class="strut" style="height: 1.06411em; vertical-align: -0.25em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.814108em;"><span class="" style="top: -3.063em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span><br>
 第二行包含<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.43056em; vertical-align: 0em;"></span><span class="mord mathdefault">n</span></span></span></span></span>个正整数<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>b</mi><mi>i</mi></msub><mo stretchy="false">(</mo><mn>1</mn><mo>≤</mo><msub><mi>b</mi><mi>i</mi></msub><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>9</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">b_i(1≤b_i≤10^9)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 1em; vertical-align: -0.25em;"></span><span class="mord"><span class="mord mathdefault">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.311664em;"><span class="" style="top: -2.55em; margin-left: 0em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.84444em; vertical-align: -0.15em;"></span><span class="mord"><span class="mord mathdefault">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.311664em;"><span class="" style="top: -2.55em; margin-left: 0em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 1.06411em; vertical-align: -0.25em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.814108em;"><span class="" style="top: -3.063em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span></p>
-<h2><a id="_118"></a>输出：</h2>
+<h2><a id="_120"></a>输出：</h2>
 <p>两个正整数，分别为<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.64444em; vertical-align: 0em;"></span><span class="mord">2</span></span></span></span></span>朵花的最大美丽差值和送花的方案数。</p>
-<h2><a id="_120"></a>样例：</h2>
-<h5><a id="1_121"></a>输入1：</h5>
+<h2><a id="_122"></a>样例：</h2>
+<h5><a id="1_123"></a>输入1：</h5>
 <pre><code>2
 1 2
 </code></pre>
-<h5><a id="1_126"></a>输出1：</h5>
+<h5><a id="1_128"></a>输出1：</h5>
 <pre><code>1 1
 </code></pre>
-<h5><a id="2_130"></a>输入2：</h5>
+<h5><a id="2_132"></a>输入2：</h5>
 <pre><code>3
 1 4 5
 </code></pre>
-<h5><a id="2_135"></a>输出2：</h5>
+<h5><a id="2_137"></a>输出2：</h5>
 <pre><code>4 1
 </code></pre>
-<h5><a id="3_139"></a>输入3：</h5>
+<h5><a id="3_141"></a>输入3：</h5>
 <pre><code>5
 3 1 2 3 1
 </code></pre>
-<h5><a id="3_144"></a>输出3：</h5>
+<h5><a id="3_146"></a>输出3：</h5>
 <pre><code>2 4
 </code></pre>
-<h2><a id="_148"></a>第三个样例解释：</h2>
+<h2><a id="_150"></a>第三个样例解释：</h2>
 <p>最大差值为<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn><mo>−</mo><mn>1</mn><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">3-1=2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.72777em; vertical-align: -0.08333em;"></span><span class="mord">3</span><span class="mspace" style="margin-right: 0.222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right: 0.222222em;"></span></span><span class="base"><span class="strut" style="height: 0.64444em; vertical-align: 0em;"></span><span class="mord">1</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.64444em; vertical-align: 0em;"></span><span class="mord">2</span></span></span></span></span>，方案数为<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.64444em; vertical-align: 0em;"></span><span class="mord">4</span></span></span></span></span>：</p>
 <ul>
 <li>选择第一朵花和第二朵花</li>
@@ -159,11 +161,11 @@
 <li>选择第四朵花和第二朵花</li>
 <li>选择第四朵花和第五朵花</li>
 </ul>
-<h2><a id="_154"></a>题解：</h2>
+<h2><a id="_156"></a>题解：</h2>
 <p>这~~看懂题应该都会做。最大差值就是最大值与最小值之差，方案数需要分类讨论一下：<br>
 当最小值<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>=</mo></mrow><annotation encoding="application/x-tex">=</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.36687em; vertical-align: 0em;"></span><span class="mrel">=</span></span></span></span></span>最大值时，即<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.43056em; vertical-align: 0em;"></span><span class="mord mathdefault">n</span></span></span></span></span>朵花美丽值都一样，<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">方</mi><mi mathvariant="normal">案</mi><mi mathvariant="normal">数</mi><mo>=</mo><mi>n</mi><mo>×</mo><mo stretchy="false">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo><mo>÷</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">方案数=n\times(n-1)\div2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.36687em; vertical-align: 0em;"></span><span class="mord cjk_fallback">方</span><span class="mord cjk_fallback">案</span><span class="mord cjk_fallback">数</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.66666em; vertical-align: -0.08333em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right: 0.222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right: 0.222222em;"></span></span><span class="base"><span class="strut" style="height: 1em; vertical-align: -0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right: 0.222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right: 0.222222em;"></span></span><span class="base"><span class="strut" style="height: 1em; vertical-align: -0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right: 0.222222em;"></span><span class="mbin">÷</span><span class="mspace" style="margin-right: 0.222222em;"></span></span><span class="base"><span class="strut" style="height: 0.64444em; vertical-align: 0em;"></span><span class="mord">2</span></span></span></span></span><br>
 当最小值<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">≠</mi></mrow><annotation encoding="application/x-tex">\neq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.88888em; vertical-align: -0.19444em;"></span><span class="mrel"><span class="mrel"><span class="mord"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.69444em;"><span class="" style="top: -3em;"><span class="pstrut" style="height: 3em;"></span><span class="rlap"><span class="strut" style="height: 0.88888em; vertical-align: -0.19444em;"></span><span class="inner"><span class="mrel"></span></span><span class="fix"></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.19444em;"><span class=""></span></span></span></span></span></span><span class="mrel">=</span></span></span></span></span></span>最大值时，<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">方</mi><mi mathvariant="normal">案</mi><mi mathvariant="normal">数</mi><mo>=</mo><mi mathvariant="normal">最</mi><mi mathvariant="normal">小</mi><mi mathvariant="normal">值</mi><mi mathvariant="normal">数</mi><mi mathvariant="normal">量</mi><mo>×</mo><mi mathvariant="normal">最</mi><mi mathvariant="normal">大</mi><mi mathvariant="normal">值</mi><mi mathvariant="normal">数</mi><mi mathvariant="normal">量</mi></mrow><annotation encoding="application/x-tex">方案数=最小值数量\times最大值数量</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.36687em; vertical-align: 0em;"></span><span class="mord cjk_fallback">方</span><span class="mord cjk_fallback">案</span><span class="mord cjk_fallback">数</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.66666em; vertical-align: -0.08333em;"></span><span class="mord cjk_fallback">最</span><span class="mord cjk_fallback">小</span><span class="mord cjk_fallback">值</span><span class="mord cjk_fallback">数</span><span class="mord cjk_fallback">量</span><span class="mspace" style="margin-right: 0.222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right: 0.222222em;"></span></span><span class="base"><span class="strut" style="height: 0em; vertical-align: 0em;"></span><span class="mord cjk_fallback">最</span><span class="mord cjk_fallback">大</span><span class="mord cjk_fallback">值</span><span class="mord cjk_fallback">数</span><span class="mord cjk_fallback">量</span></span></span></span></span></p>
-<h2><a id="_158"></a>参考代码：</h2>
+<h2><a id="_160"></a>参考代码：</h2>
 <p>最容易理解的做法，没有之一：</p>
 <pre><code class="prism language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
@@ -254,6 +256,73 @@
         num1<span class="token operator">=</span><span class="token function">upper_bound</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>a<span class="token operator">+</span>n<span class="token punctuation">,</span>a<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-</span>a<span class="token punctuation">;</span>
         num2<span class="token operator">=</span>n<span class="token operator">-</span><span class="token punctuation">(</span><span class="token function">lower_bound</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>a<span class="token operator">+</span>n<span class="token punctuation">,</span>a<span class="token punctuation">[</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
         cout<span class="token operator">&lt;&lt;</span>a<span class="token punctuation">[</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">-</span>a<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">&lt;&lt;</span><span class="token string">' '</span><span class="token operator">&lt;&lt;</span><span class="token punctuation">(</span><span class="token keyword">long</span> <span class="token keyword">long</span><span class="token punctuation">)</span>num1<span class="token operator">*</span>num2<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><br><br><br><br></p>
+<p><span id="link3"></span><br>
+<font size="6"><a href="https://vjudge.net/contest/423330#problem/K" target="_blank">K题：Three swimmers</a></font></p>
+<h2><a id="__264"></a>题面大意 ：</h2>
+<p>对于给定的等待时间以后，这个人还需要等待最少多少时间能在该处位置等到至少刚才游泳的人之一</p>
+<h2><a id="_266"></a>题解：</h2>
+<p>寻找当前与该名游泳者相遇的最短时间，最后再对于这三个不同的人中选出最短的时间即可</p>
+<h2><a id="_268"></a>参考代码：</h2>
+<pre><code class="prism language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+string  str<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">long</span> <span class="token keyword">long</span>  t<span class="token punctuation">;</span>
+    cin<span class="token operator">&gt;&gt;</span>t<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>t<span class="token operator">--</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">long</span> <span class="token keyword">long</span>  n<span class="token punctuation">,</span>a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>c<span class="token punctuation">;</span>
+        cin<span class="token operator">&gt;&gt;</span>n<span class="token operator">&gt;&gt;</span>a<span class="token operator">&gt;&gt;</span>b<span class="token operator">&gt;&gt;</span>c<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">%</span>a<span class="token operator">==</span><span class="token number">0</span><span class="token operator">||</span>n<span class="token operator">%</span>b<span class="token operator">==</span><span class="token number">0</span><span class="token operator">||</span>n<span class="token operator">%</span>c<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token comment">//如果a,b,c是n的因子，等待0分钟</span>
+            a<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span>
+        <span class="token punctuation">{</span>
+            a<span class="token operator">=</span>a<span class="token operator">-</span>n<span class="token operator">%</span>a<span class="token punctuation">;</span><span class="token comment">//分别求出到达岸边最短时间</span>
+            b<span class="token operator">=</span>b<span class="token operator">-</span>n<span class="token operator">%</span>b<span class="token punctuation">;</span>
+            c<span class="token operator">=</span>c<span class="token operator">-</span>n<span class="token operator">%</span>c<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        cout<span class="token operator">&lt;&lt;</span><span class="token function">min</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span><span class="token function">min</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span>c<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><br><br><br><br></p>
+<p><span id="link4"></span><br>
+<font size="6"><a href="https://vjudge.net/contest/423330#problem/L" target="_blank">L题：Arena</a></font></p>
+<h2><a id="_302"></a>题面大意：</h2>
+<p>求出最多有多少人可赢得比赛</p>
+<h2><a id="_304"></a>题解：</h2>
+<p>找到最小值，然后比较，找到比最小值大的即可</p>
+<h2><a id="_306"></a>参考代码：</h2>
+<pre><code class="prism language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> t<span class="token punctuation">;</span>
+    cin<span class="token operator">&gt;&gt;</span>t<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>t<span class="token operator">--</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> n<span class="token punctuation">,</span>mi<span class="token operator">=</span><span class="token number">110</span><span class="token punctuation">,</span>a<span class="token punctuation">[</span><span class="token number">200</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        cin<span class="token operator">&gt;&gt;</span>n<span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            cin<span class="token operator">&gt;&gt;</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;</span>mi<span class="token punctuation">)</span>
+                mi<span class="token operator">=</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">int</span> sum<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&gt;</span>mi<span class="token punctuation">)</span>
+                sum<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        cout<span class="token operator">&lt;&lt;</span>sum<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
