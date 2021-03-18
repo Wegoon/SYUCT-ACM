@@ -16,7 +16,90 @@
 报名费：含金量决定报名费，既然是野鸡赛，报名费自然很少：30元<br>
 其它详细信息自己去看：<a href="https://www.saikr.com/vse/41662" target="_blank">报名通道</a> <a href="https://wegoon.github.io/syuctacm/教练信息.html" target="_blank">教练信息</a></p>
 </blockquote>
+<p><font face="楷体"><font size="5">2、关于举办天梯选拔赛的通知:</font></font></p>
+<blockquote>
+<h4><a id="_9"></a>说明：</h4>
+<p>我原本是准备一套题的，但是后来发现我准备的题都在练习集里~~后来正好在ICPC教练群里看到了上海理工大学周春樵老师发的关于举办比赛的消息，感觉无论是比赛时间还是题目难度都很合适，所以就打算用这场比赛进行天梯赛选拔。</p>
+<h4><a id="_11"></a>附原通知：</h4>
+<img src="https://img-blog.csdnimg.cn/20210318192149866.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ5NzIzMTQz,size_16,color_FFFFFF,t_70" width="40%">
+<h4><a id="_15"></a>报名通道：</h4>
+<p><font size="3"><a href="https://ac.nowcoder.com/acm/contest/13276" target="_blank">报名链接</a></font></p>
+<h4><a id="_18"></a>要求：</h4>
+<p>所有人将自己牛客账号上的学校改为：沈阳化工大学，为保护大家个人隐私不要求实名，但要填写<a href="https://www.wjx.cn/vm/YiVi3yh.aspx" target="_blank">问卷星</a>。</p>
+</blockquote>
 </div>
 </body>
 
 </html>
+
+
+<style>
+    .arrow{
+        border: 9px solid transparent;
+        border-bottom-color: #000000;
+        width: 0px;
+        height: 0px;
+        top:4px
+    }
+    .stick{
+        width: 8px;
+        height: 14px;
+        border-radius: 1px;
+        background-color: #000000;
+        top:20px;
+    }
+    #back_top div{
+        position: absolute;
+        margin: auto;
+        right: 0px;
+        left: 0px;
+    }
+    #back_top{
+        background-color: #dddddd;
+        height: 50px;
+        width: 50px;
+        border-radius: 10px;
+        display: block;
+        cursor: pointer;
+        position: fixed;
+        right: 50px;
+        bottom: 50px;
+        display: none;
+    }
+</style>
+
+
+
+<div id="article"></div>
+<div id="back_top">
+<div class="arrow"></div>
+<div class="stick"></div>
+</div>
+<script src="http://cdn.staticfile.org/jquery/1.11.1-rc2/jquery.min.js"></script>
+<script>
+$(function(){
+
+    $(window).scroll(function(){  //只要窗口滚动,就触发下面代码
+
+        var scrollt = document.documentElement.scrollTop + document.body.scrollTop; //获取滚动后的高度
+
+        if( scrollt >200 ){  //判断滚动后高度超过200px,就显示
+
+            $("#back_top").fadeIn(400); //淡入
+
+        }else{
+
+            $("#back_top").stop().fadeOut(400); //如果返回或者没有超过,就淡出.必须加上stop()停止之前动画,否则会出现闪动
+
+        }
+
+    });
+
+    $("#back_top").click(function(){ //当点击标签的时候,使用animate在200毫秒的时间内,滚到顶部
+
+        $("html,body").animate({scrollTop:"0px"},200);
+
+    }); 
+
+});
+</script>
