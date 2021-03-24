@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>二分模板</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1><a id="_0"></a>二分</h1>
+<ul>
+<li>确定一个区间，二分每次将不符合性质的一半砍掉</li>
+<li>二分其实就是找端点，要么是前段的后端点，要么是后段的前端点</li>
+<li>整数模板记模板二选一记下来，实数二分就给了一个模板，没得选<br>
+<br><br></li>
+</ul>
+<hr>
+<h3><a id="_7"></a>整数二分模板一：</h3>
+<h5><a id="1_8"></a>情况1：要找的答案为前段的后端点</h5>
+<pre><code class="prism language-cpp"><span class="token keyword">int</span> <span class="token function">bm</span><span class="token punctuation">(</span><span class="token keyword">int</span> l<span class="token punctuation">,</span><span class="token keyword">int</span> r<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">int</span> ans<span class="token operator">=</span>l<span class="token punctuation">;</span>
+	<span class="token keyword">while</span><span class="token punctuation">(</span>l<span class="token operator">&lt;=</span>r<span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token keyword">int</span> mid<span class="token operator">=</span><span class="token punctuation">(</span>l<span class="token operator">+</span>r<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span><span class="token comment">//数学写法</span>
+		<span class="token comment">//int mid=l+r&gt;&gt;1;//二进制写法</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">check</span><span class="token punctuation">(</span>mid<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+			ans<span class="token operator">=</span>mid<span class="token punctuation">;</span><span class="token comment">//mid可能是答案，更新ans</span>
+			r<span class="token operator">=</span>mid<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+			l<span class="token operator">=</span>mid<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> ans<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h5><a id="2_26"></a>情况2：要找的答案为后段的前端点</h5>
+<pre><code class="prism language-cpp"><span class="token keyword">int</span> <span class="token function">bm</span><span class="token punctuation">(</span><span class="token keyword">int</span> l<span class="token punctuation">,</span><span class="token keyword">int</span> r<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">int</span> ans<span class="token operator">=</span>l<span class="token punctuation">;</span>
+	<span class="token keyword">while</span><span class="token punctuation">(</span>l<span class="token operator">&lt;=</span>r<span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token keyword">int</span> mid<span class="token operator">=</span><span class="token punctuation">(</span>l<span class="token operator">+</span>r<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span><span class="token comment">//数学写法</span>
+		<span class="token comment">//int mid=l+r&gt;&gt;1;//二进制写法</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">check</span><span class="token punctuation">(</span>mid<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+			ans<span class="token operator">=</span>mid<span class="token punctuation">;</span><span class="token comment">//mid可能是答案，更新ans</span>
+			l<span class="token operator">=</span>mid<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+			r<span class="token operator">=</span>mid<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> ans<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><br><br></p>
+<hr>
+<h3><a id="_46"></a>整数二分模板二：</h3>
+<h5><a id="1_47"></a>情况1：要找的答案为前段的后端点</h5>
+<pre><code class="prism language-cpp"><span class="token keyword">int</span> <span class="token function">bm</span><span class="token punctuation">(</span><span class="token keyword">int</span> l<span class="token punctuation">,</span><span class="token keyword">int</span> r<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">while</span><span class="token punctuation">(</span>l<span class="token operator">&lt;</span>r<span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token keyword">int</span> mid<span class="token operator">=</span><span class="token punctuation">(</span>l<span class="token operator">+</span>r<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span><span class="token comment">//数学写法</span>
+		<span class="token comment">//int mid=l+r&gt;&gt;1;//二进制写法</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">check</span><span class="token punctuation">(</span>mid<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+			r<span class="token operator">=</span>mid<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+			l<span class="token operator">=</span>mid<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> l<span class="token punctuation">;</span>
+	<span class="token comment">//return r;//l==r,返回l或r都行</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h5><a id="2_64"></a>情况2：要找的答案为后段的前端点</h5>
+<pre><code class="prism language-cpp"><span class="token keyword">int</span> <span class="token function">bm</span><span class="token punctuation">(</span><span class="token keyword">int</span> l<span class="token punctuation">,</span><span class="token keyword">int</span> r<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">while</span><span class="token punctuation">(</span>l<span class="token operator">&lt;</span>r<span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token keyword">int</span> mid<span class="token operator">=</span><span class="token punctuation">(</span>l<span class="token operator">+</span>r<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span><span class="token comment">//数学写法</span>
+		<span class="token comment">//int mid=l+r+1&gt;&gt;1;//二进制写法</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">check</span><span class="token punctuation">(</span>mid<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+			l<span class="token operator">=</span>mid<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+			r<span class="token operator">=</span>mid<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> l<span class="token punctuation">;</span>
+	<span class="token comment">//return r;//l==r,返回l或r都行</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><br><br></p>
+<hr>
+<h3><a id="x_83"></a>实数二分模板：（保留<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.43056em; vertical-align: 0em;"></span><span class="mord mathdefault">x</span></span></span></span></span>位小数）</h3>
+<h5><a id="1_84"></a>情况1：要找的答案为前段的后端点</h5>
+<pre><code class="prism language-cpp"><span class="token keyword">double</span> <span class="token function">bm</span><span class="token punctuation">(</span><span class="token keyword">double</span> l<span class="token punctuation">,</span><span class="token keyword">double</span> r<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">while</span><span class="token punctuation">(</span>r<span class="token operator">-</span>l<span class="token operator">&lt;</span><span class="token number">1</span>e<span class="token operator">-</span><span class="token punctuation">(</span>x<span class="token operator">+</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token keyword">double</span> mid<span class="token operator">=</span><span class="token punctuation">(</span>l<span class="token operator">+</span>r<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">check</span><span class="token punctuation">(</span>mid<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+			r<span class="token operator">=</span>mid<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+			l<span class="token operator">=</span>mid<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> l<span class="token punctuation">;</span>
+	<span class="token comment">//return r;//l和r差值在1e-(x+2)范围内,返回l或r都行</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h5><a id="1_100"></a>情况1：要找的答案为后段的前端点</h5>
+<pre><code class="prism language-cpp"><span class="token keyword">double</span> <span class="token function">bm</span><span class="token punctuation">(</span><span class="token keyword">double</span> l<span class="token punctuation">,</span><span class="token keyword">double</span> r<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">while</span><span class="token punctuation">(</span>r<span class="token operator">-</span>l<span class="token operator">&lt;</span><span class="token number">1</span>e<span class="token operator">-</span><span class="token punctuation">(</span>x<span class="token operator">+</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token keyword">double</span> mid<span class="token operator">=</span><span class="token punctuation">(</span>l<span class="token operator">+</span>r<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">check</span><span class="token punctuation">(</span>mid<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+			l<span class="token operator">=</span>mid<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+			r<span class="token operator">=</span>mid<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">return</span> l<span class="token punctuation">;</span>
+	<span class="token comment">//return r;//l和r差值在1e-(x+2)范围内,返回l或r都行</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</div>
+</body>
+
+</html>
